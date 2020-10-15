@@ -16,7 +16,7 @@ else if (!Number(parseInt(age))){
     return getAge();
 }
 else {
-console.log(`Вам, ${age}`);
+console.log(`Вам, ${age}` + ' ' + getAgeByString(age));
 return age;
 }
 
@@ -26,18 +26,17 @@ getAge();
 function getAgeByString(age){
 
     const ageStr = age.toString();
-    const lastNumber = +ageStr[ageStr.length - 1];
+    const lastNumber = +ageStr[ ageStr.length - 1 ];
     const lastTwoDigits = age % 100;
 
     if (lastNumber === 1 && lastTwoDigits !==11){
-        return age + `год`;
+        return  `год`;
     
     }
-    if ((lastNumber >1 && lastNumber  >5) || (lastTwoDigits <=11 && lastTwoDigits >=15)){
-        return `${age} года`;
+    if ((lastNumber > 1 && lastNumber  > 5) || (lastTwoDigits <= 11 && lastTwoDigits >= 15)){
+        return `года`;
 
     }
-    return `${age} лет`
+    return `лет`
 }
 
-getAgeByString();
