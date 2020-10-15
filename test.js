@@ -1,8 +1,7 @@
 
 function getAge(minAge=1,maxAge=150) {
 const age = prompt("How old are you", "age")
-const isDataCorrect = confirm(`Вам ${age} лет?`);
-console.log(isDataCorrect);
+
 if (age === null || age <=minAge || age>=maxAge){
 console.log("Отказ");
 return getAge(minAge=1,maxAge=150);
@@ -16,7 +15,7 @@ else if (!Number(parseInt(age))){
     return getAge();
 }
 else {
-console.log(`Вам, ${age}` + ' ' + getAgeByString(age));
+const confirm = (`Вам, ${getAgeByString(age)}` );
 return age;
 }
 
@@ -30,13 +29,13 @@ function getAgeByString(age){
     const lastTwoDigits = age % 100;
 
     if (lastNumber === 1 && lastTwoDigits !==11){
-        return  `год`;
+        return age + `год`;
     
     }
-    if ((lastNumber > 1 && lastNumber  < 5) (lastTwoDigits <= 11 && lastTwoDigits >= 15)){
-        return `года`;
+    if ((lastNumber > 1 && lastNumber  < 5) && (lastTwoDigits <= 11 || lastTwoDigits >= 15)){
+        return `${age} года`;
 
     }
-    return `лет`
+    return `${age} лет`
 }
 
