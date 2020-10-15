@@ -33,7 +33,7 @@ function getAgeByString(age){
         return  `год`;
     
     }
-    if ((lastNumber > 1 && lastNumber  > 5) || (lastTwoDigits <= 11 && lastTwoDigits >= 15)){
+    if ((lastNumber > 1 && lastNumber  < 5) (lastTwoDigits <= 11 && lastTwoDigits >= 15)){
         return `года`;
 
     }
