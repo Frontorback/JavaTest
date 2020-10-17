@@ -1,4 +1,17 @@
+getData();
 
+function getData(defaultAge) {
+    
+    const age = getAge(defaultAge);
+    const isDataCorrect = confirm(`Вам, ${getAgeByString(age)}?` );
+
+    if (isDataCorrect) {
+        console.log('Рады знакомству!');
+    } else {
+        console.log('Введите данные заново!');
+        getData(age);
+    }
+}
 function getAge(minAge=1,maxAge=150) {
 const age = prompt("How old are you", "age")
 
@@ -15,14 +28,15 @@ else if (!Number(parseInt(age))){
     return getAge();
 }
 else {
-const confirm = (`Вам, ${getAgeByString(age)}` );
+
+console.log(getAgeByString(age));
 return age;
 }
 
 }
 getAge();
 
-function getAgeByString(age){
+function getAgeByString(age){ 
 
     const ageStr = age.toString();
     const lastNumber = +ageStr[ ageStr.length - 1 ];
